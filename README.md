@@ -34,11 +34,16 @@ A custom Lovelace card for Home Assistant to control shutters and blinds with ea
 Add the following to your Lovelace configuration:
 
 ```yaml
-type: 'custom:hass-shutter-card'
-entity: cover.living_room_shutter
-title: Living Room Shutter
-show_buttons: true
-show_position: true
+type: custom:shutter-card
+title: Küche
+entities:
+  - entity: cover.rollo_kuche1_vorhang
+    name: rechts
+    buttons_position: left
+    title_position: bottom
+    invert_buttonlogic: false
+    invert_percentage: true
+
 ```
 
 ### Configuration Options
