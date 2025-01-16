@@ -195,13 +195,13 @@ class ShutterCard extends HTMLElement {
                 
                 switch (command) {
                   case 'up':
-                      service = 'open_cover';
-                      //service = 'close_cover';
+                      //service = 'open_cover';
+                      service = 'close_cover';
                       break;
                       
                   case 'down':
-                      service = 'close_cover';
-                      //service = 'open_cover';
+                      //service = 'close_cover';
+                      service = 'open_cover';
                       break;
 
                   case 'stop':
