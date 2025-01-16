@@ -63,6 +63,7 @@ show_position: true
 | `always_percentage`       | boolean | False    | false                   | If true, end states (open/closed) will also be displayed as numbers (0/100%).       |
 | `shutter_width_px`        | int     | False    | 153                     | Shutter visualization width in px, adjustable to fit your layout.                  |
 | `disable_end_buttons`     | boolean | False    | false                   | If true, deactivates direction buttons (e.g., "up" when fully open).                |
+| `invert_buttonlogic`     | boolean | False    | false                   | If true, up and down are swapped, necessary for certain curtain modules.             |
 
 ## Screenshots
 
