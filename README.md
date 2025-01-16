@@ -72,7 +72,7 @@ entities:
 
 ## Screenshots
 
-![Shutter Card Example](https://via.placeholder.com/800x400)
+![Shutter Card Example](https://raw.githubusercontent.com/DevHoH/adjustable-shutter/master/images/shutter-card.gif)
 
 ## Contributing
 
