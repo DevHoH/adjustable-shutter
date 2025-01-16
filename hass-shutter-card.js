@@ -42,6 +42,11 @@ class ShutterCard extends HTMLElement {
           invertPercentage = entity.invert_percentage;
         }
 
+        let invertButtonLogic = false;
+        if (entity && entity.invert_buttonlogic) {
+          invertButtonLogic = entity.invert_buttonlogic;
+        }
+
         let partial = 0;
         if (entity && entity.partial_close_percentage) {
           partial = Math.max(0,Math.min(100,entity.partial_close_percentage)); // make sure this is valid range
@@ -192,8 +197,13 @@ class ShutterCard extends HTMLElement {
                 
                 let service = '';
                 let args = ''
+
+                // Adjust command if invertButtonLogic is true
+                const adjustedCommand = invertButtonLogic && (command === 'up' || command === 'down') 
+                  ? (command === 'up' ? 'down' : 'up') 
+                  : command;
                 
-                switch (command) {
+                switch (adjustedCommand) {
                   case 'up':
                       //service = 'open_cover';
                       service = 'close_cover';
