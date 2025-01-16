@@ -1,61 +1,64 @@
-# Shutter card
+# hass-shutter-card
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-[![buymeacoffee_badge](https://img.shields.io/badge/Donate-Buymeacoffee-orange?style=for-the-badge)](https://www.buymeacoffee.com/DevHoH)
+A custom Lovelace card for Home Assistant to control shutters and blinds with ease and style. This project is a fork of [hass-shutter-card](https://github.com/Deejayfool/hass-shutter-card), with enhancements and improvements tailored for a better user experience.
 
-**Note : Be careful, since version 2021.11.0 of Home Assistant, there is a breaking change in the icon buttons. So install v1.3.0 of this card only if you have at least the version 2021.11.0 of Home Assistant**
+## Features
 
-This card allows to open, close or set a shutter to the opening rate you want.
+- Intuitive and modern user interface
+- Displays shutter/blind states in real-time
+- Fully customizable appearance
+- Compatible with various shutter and blind integrations
 
-![Shutter card](https://raw.githubusercontent.com/DevHoH/hass-shutter-card/master/images/shutter-card.gif)
+## Installation
 
-## Configuration
+### Manual Installation
 
-### General
+1. Download the `hass-shutter-card.js` file from the [releases section](https://github.com/your-repo-link/releases).
+2. Place the file in your Home Assistant configuration directory under `/www/community/hass-shutter-card/`.
+3. Add the following to your `resources` in `configuration.yaml` or through the Home Assistant UI:
+   ```yaml
+   resources:
+     - url: /local/community/hass-shutter-card/hass-shutter-card.js
+       type: module
+   ```
 
-| Name | Type | Required | Default | Description
-| ---- | ---- | -------- | ------- | -----------
-| type | string | True | - | Must be "custom:shutter-card"
-| title | string | False | - | Title of the card
+### HACS Installation
 
-### Entities
+1. Open the Home Assistant Community Store (HACS).
+2. Search for `hass-shutter-card` in the Frontend section.
+3. Click "Install" and follow the prompts.
+4. Add the resource as described above if not added automatically.
 
-| Name | Type | Required | Default | Description
-| ---- | ---- | -------- | ------- | -----------
-| entity | string | True | - | The shutter entity ID
-| name | string | False | _Friendly name of the entity_ | Name to display for the shutter
-| buttons_position | string | False | `left` | Set buttons on `left`, `right`, `top` or `bottom` of the shutter
-| title_position | string | False | `top` | Set title on `top` or on `bottom` of the shutter
-| invert_percentage | boolean | False | `false` | Set it to `true` if your shutter is 100% when it is closed, and 0% when it is opened
-| can_tilt | boolean | False | `false` | Set it to `true` if your shutters support tilting.
-| partial_close_percentage | int | False | `0` | Set it to a percentage (0-100) if you want to be able to quickly go to this "partially closed" state using a button.
-| offset_closed_percentage | int | False | `0` | Set it to a percentage (0-100) of travel that will still be considered a "closed" state in the visualization.
-| always_percentage | boolean | False | `false` | If set to `true`, the end states (opened/closed) will be also as numbers (0 / 100 % ) instead of a text
-| shutter_width_px | int | False | `153` | Set shutter visualization width in px. You can make it thicker or narrower to fit your layout.
-| disable_end_buttons | boolean | False | `false` | If set to `true`, the end states (opened/closed) will also deactivate the buttons for that direction (i.e. the "up" button will be disabled when the shutters are fully open)
+## Usage
 
-_Remark : you can also just give the entity ID (without to specify `entity:`) if you don't need to specify the other configurations._
-
-### Sample
+Add the following to your Lovelace configuration:
 
 ```yaml
-type: 'custom:shutter-card'
-title: My shutters
-entities:
-  - entity: cover.left_living_shutter
-    name: Left shutter
-    buttons_position: left
-    title_position: bottom
+type: 'custom:hass-shutter-card'
+entity: cover.living_room_shutter
+title: Living Room Shutter
+show_buttons: true
+show_position: true
 ```
 
-## Install
+### Configuration Options
 
-If you use HACS, the resources will automatically be configured with the needed file.
+| Option         | Type    | Description                                    | Default |
+|----------------|---------|------------------------------------------------|---------|
+| `type`         | string  | Must be `custom:hass-shutter-card`.           | N/A     |
+| `entity`       | string  | Entity ID of the shutter or blind.            | N/A     |
+| `title`        | string  | Title displayed above the card.               | `null`  |
+| `show_buttons` | boolean | Whether to show open/close buttons.           | `true`  |
+| `show_position`| boolean | Whether to display the current position.      | `true`  |
 
-If you don't use HACS, you can download js file from [latest releases](https://github.com/DevHoH/hass-shutter-card/releases). Drop it then in `www` folder in your `config` directory. Next add the following entry in lovelace configuration:
+## Screenshots
 
-```yaml
-resources:
-  - url: /local/hass-shutter-card.js
-    type: module
-```
+![Shutter Card Example](https://via.placeholder.com/800x400)
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
