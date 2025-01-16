@@ -43,13 +43,26 @@ show_position: true
 
 ### Configuration Options
 
-| Option         | Type    | Description                                    | Default |
-|----------------|---------|------------------------------------------------|---------|
-| `type`         | string  | Must be `custom:hass-shutter-card`.           | N/A     |
-| `entity`       | string  | Entity ID of the shutter or blind.            | N/A     |
-| `title`        | string  | Title displayed above the card.               | `null`  |
-| `show_buttons` | boolean | Whether to show open/close buttons.           | `true`  |
-| `show_position`| boolean | Whether to display the current position.      | `true`  |
+#### General
+| Name              | Type    | Required | Default | Description                                   |
+|-------------------|---------|----------|---------|-----------------------------------------------|
+| `type`            | string  | True     | -       | Must be `custom:shutter-card`.               |
+| `title`           | string  | False    | -       | Title of the card.                           |
+
+#### Entities
+| Name                      | Type    | Required | Default                 | Description                                                                         |
+|---------------------------|---------|----------|-------------------------|-------------------------------------------------------------------------------------|
+| `entity`                  | string  | True     | -                       | The shutter entity ID.                                                              |
+| `name`                    | string  | False    | Friendly name of entity | Name to display for the shutter.                                                   |
+| `buttons_position`        | string  | False    | left                    | Set buttons on left, right, top, or bottom of the shutter.                          |
+| `title_position`          | string  | False    | top                     | Set title on top or bottom of the shutter.                                          |
+| `invert_percentage`       | boolean | False    | false                   | Set to true if your shutter is 100% when closed and 0% when opened.                 |
+| `can_tilt`                | boolean | False    | false                   | Set to true if your shutters support tilting.                                       |
+| `partial_close_percentage`| int     | False    | 0                       | Percentage (0-100) for a quick "partially closed" state.                            |
+| `offset_closed_percentage`| int     | False    | 0                       | Percentage (0-100) of travel considered "closed" in the visualization.              |
+| `always_percentage`       | boolean | False    | false                   | If true, end states (open/closed) will also be displayed as numbers (0/100%).       |
+| `shutter_width_px`        | int     | False    | 153                     | Shutter visualization width in px, adjustable to fit your layout.                  |
+| `disable_end_buttons`     | boolean | False    | false                   | If true, deactivates direction buttons (e.g., "up" when fully open).                |
 
 ## Screenshots
 
