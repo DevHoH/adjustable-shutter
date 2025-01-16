@@ -13,7 +13,7 @@ A custom Lovelace card for Home Assistant to control shutters and blinds with ea
 
 ### Manual Installation
 
-1. Download the `hass-shutter-card.js` file from the [releases section](https://github.com/your-repo-link/releases).
+1. Download the `hass-shutter-card.js` file from the [releases section](https://github.com/DevHoH/adjustable-shutter/releases).
 2. Place the file in your Home Assistant configuration directory under `/www/community/hass-shutter-card/`.
 3. Add the following to your `resources` in `configuration.yaml` or through the Home Assistant UI:
    ```yaml
