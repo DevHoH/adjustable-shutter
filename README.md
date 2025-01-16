@@ -1,3 +1,6 @@
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="DevHoH" data-color="#FFDD00" data-emoji=""  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+
+
 # hass-shutter-card
 
 A custom Lovelace card for Home Assistant to control shutters and blinds with ease and style. This project is a fork of [hass-shutter-card](https://github.com/Deejayfool/hass-shutter-card), with enhancements and improvements tailored for a better user experience.
